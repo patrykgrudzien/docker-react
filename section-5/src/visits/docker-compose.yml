@@ -1,0 +1,17 @@
+version: '3'
+# version specifies which version of (docker-compose) we'd like to use.
+
+# service = container (but not exactly a 100% container). It's rather a (type of container).
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: always
+    build:
+      .
+    ports:
+      - "4001:8081"
+
+# By just defining these 2 services, Docker compose is going to automatically create both
+# these containers (on the same network) !
+# So they will have free access to communicate between each other in any way.
