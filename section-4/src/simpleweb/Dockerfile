@@ -3,7 +3,7 @@ FROM node:alpine
 
 WORKDIR /usr/app
 
-# Copy "package.json" from current directory to "root" location of Docker container
+# Copy "package.json" from current directory to "/usr/app" location of Docker container
 COPY ./package.json ./
 # Install some dependencies
 RUN npm install
