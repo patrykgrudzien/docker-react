@@ -4,16 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jurik99</groupId>
-    <artifactId>docker-kubernetes-udemy</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>com.jurik99</groupId>
+        <artifactId>docker-kubernetes-udemy</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <packaging>pom</packaging>
+    <artifactId>section-6</artifactId>
 
-    <modules>
-        <module>section-4</module>
-        <module>section-5</module>
-        <module>section-6</module>
-    </modules>
-    
 </project>
