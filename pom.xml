@@ -5,16 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jurik99</groupId>
-    <artifactId>docker-kubernetes-udemy</artifactId>
+    <artifactId>docker-react</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
-    <modules>
-        <module>section-4</module>
-        <module>section-5</module>
-        <module>section-6</module>
-        <module>section-7</module>
-    </modules>
-    
 </project>
