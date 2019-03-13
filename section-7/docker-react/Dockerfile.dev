@@ -1,0 +1,14 @@
+# This file is only used when we want to run our application in a DEVELOPMENT environment.
+# In the future, we'll create another "Dockerfile" for running the same application in a PRODUCTION environment.
+
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]

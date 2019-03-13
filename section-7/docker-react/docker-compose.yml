@@ -1,0 +1,25 @@
+# To avoid such a long docker command:
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>
+
+version: '3'
+services:
+  # (web) is just a name here for one of the container
+  web:
+    build:
+      dockerfile: Dockerfile.dev
+      context: . # very important property !
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  # second service to run only tests (no need to map ports)
+  tests:
+    build:
+      dockerfile: Dockerfile.dev
+      context: . # very important property !
+    volumes:
+      - /app/node_modules
+      - .:/app
+    # overriding default starting command(s)
+    command: ["npm", "run", "test"]
