@@ -14,4 +14,22 @@ before_install:
 
 # tell Travis how to run our test suite
 script:
-  - docker run jurik99/docker-react npm run test -- --coverage # (-- --coverage) is used to print tests result and exit interactive mode.
+  - docker run jurik99/docker-react npm run test -- --coverage
+  # (-- --coverage) is used to print tests result and exit interactive mode.
+
+# configuration used to deploy the app into AWS
+deploy:
+  # travis-ci comes preconfigured to deploy our app to a handful of a different providers
+  provider: elasticbeanstalk
+  region: "us-east-2"   # that value comes from URL from AWS application's console
+  app: "docker-react"
+  env: "DockerReact-env"
+  # when travis decides to deploy my code base, it's gonna take all files inside github repo
+  # it's gonna zip them all inside (1 zip) file and it's gonna copy it to (S3 bucket)
+  # which is essentially a hard-drive running on the AWS. Once the copy is over, travis-ci is gonna
+  # inform (elasticbeanstalk)  - hey I just uploaded new zip file to S3, use that to redeploy an application.
+  # When I initialized elasticbeanstalk instance, S3 was automatically created for me as well.
+  bucket_name: "elasticbeanstalk-us-east-2-722678999417"
+  bucket_path: "docker-react"
+  on:
+    branch: master
