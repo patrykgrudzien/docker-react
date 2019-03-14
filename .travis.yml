@@ -9,6 +9,9 @@ sudo: required
 services:
   - docker
 
+node_js:
+  - "11.10.1"   # version downgrading as the latest one causes an error on travis-ci
+
 before_install:
   - docker build -t jurik99/docker-react -f Dockerfile.dev .
 
