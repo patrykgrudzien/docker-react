@@ -19,7 +19,7 @@ FROM nginx
 # ---
 # AWS, elasticbeanstalk is a little bit different. Elasticbeanstalk, when it starts a docker container
 # it's gonna look at this Dockerfile for the (EXPOSE) instruction and whatever port is specified here,
-# elasticbeanstalk is gonna map to it automatically !
+# elasticbeanstalk is gonna map to it automatically!
 EXPOSE 80
 # destination path is specified in "nginx" documentation on the hub.docker.com
 COPY --from=builder /app/build /usr/share/nginx/html
