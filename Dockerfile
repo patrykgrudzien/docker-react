@@ -1,7 +1,7 @@
 # I'm providing name of that phase (stage) as "builder"
 FROM node:8-alpine AS builder
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 # according to that change from -> (COPY . .) to -> (COPY . ./) -> look at Section 7, Lecture 93
 COPY . ./
